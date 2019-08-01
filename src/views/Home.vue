@@ -4,12 +4,12 @@
  * @作者: 黄建停
  * @Date: 2019-07-18 22:05:02
  * @LastEditors: 黄建停
- * @LastEditTime: 2019-08-01 14:21:48
+ * @LastEditTime: 2019-08-01 20:49:51
  -->
 <template>
   <div class="home">
     <div class="left"><LeftPanel></LeftPanel></div>
-    <div class="center">中间地图</div>
+    <div class="center"><Map /></div>
     <div class="right">右侧栏</div>
   </div>
 </template>
@@ -19,13 +19,14 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 // import { State, Action, Getter } from 'vuex-class';
 import LeftPanel from './components/LeftPanel.vue';
-// import { CityState } from '../store/home/types';
+import Map from './components/Map.vue';
 
 const namespace: string = 'home';
 
 @Component({
   components: {
     LeftPanel,
+    Map,
   },
 })
 export default class Home extends Vue {
@@ -52,6 +53,16 @@ export default class Home extends Vue {
     margin-left: 25px;
     margin-top: 50px;
     height: calc(100% - 65px);
+  }
+  .center {
+    flex: 1;
+    height: 98%;
+    position: relative;
+  }
+  .right {
+    width: 960px;
+    height: 100%;
+    margin-right: 30px;
   }
 }
 </style>
